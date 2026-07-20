@@ -4,68 +4,408 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>भुजबळ नर्सरी काष्टी</title>
+
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-font-family:Arial,sans-serif;
-margin:0;
-background:#f4fff4;
-color:#333;
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+  color:#222;
+  overflow-x:hidden;
 }
+
+/* Header */
 header{
-background:#2e7d32;
-color:white;
-padding:20px;
-text-align:center;
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(11,61,46,0.9);
+  color:white;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  backdrop-filter:blur(8px);
 }
-section{
-padding:20px;
+
+header h1{
+  font-size:22px;
 }
+
+/* Hero */
+.hero{
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  position:relative;
+  animation:zoomHero 18s ease-in-out infinite alternate;
+}
+
+@keyframes zoomHero{
+  from{background-size:100%;}
+  to{background-size:110%;}
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+
+.hero-box{
+  position:relative;
+  z-index:2;
+  max-width:700px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(8px);
+}
+
+.hero h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:12px;
+}
+
 .btn{
-display:inline-block;
-padding:12px 20px;
-background:#2e7d32;
-color:white;
-text-decoration:none;
-border-radius:8px;
-margin:10px;
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:35px;
+  background:#d4af37;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
 }
+
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 8px 20px rgba(212,175,55,0.4);
+}
+
+/* Floating leaves */
+.leaf{
+  position:absolute;
+  font-size:28px;
+  animation:floatLeaf 8s linear infinite;
+  opacity:0.7;
+}
+
+.leaf:nth-child(1){left:10%;animation-delay:0s;}
+.leaf:nth-child(2){left:50%;animation-delay:3s;}
+.leaf:nth-child(3){left:80%;animation-delay:6s;}
+
+@keyframes floatLeaf{
+  0%{transform:translateY(-10px) rotate(0deg);}
+  100%{transform:translateY(100vh) rotate(360deg);}
+}
+
+/* Sections */
+section{
+  padding:80px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.title{
+  text-align:center;
+  color:#0b3d2e;
+  font-size:32px;
+  margin-bottom:35px;
+}
+
+/* Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+  transition:0.35s;
+  padding:20px;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 15px 30px rgba(0,0,0,0.18);
+}
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#0b3d2e;
+  margin-bottom:10px;
+}
+
+.card p{
+  line-height:1.6;
+}
+
+/* About */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* Stats */
+.stats{
+  background:#0b3d2e;
+  color:white;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  text-align:center;
+}
+
+.stats div{
+  padding:35px 20px;
+}
+
+.stats h3{
+  font-size:38px;
+  color:#d4af37;
+}
+
+/* Contact */
+.contact{
+  text-align:center;
+}
+
+.contact p{
+  margin:8px 0;
+  font-size:18px;
+}
+
+.call{
+  background:#0b3d2e;
+  color:white;
+}
+
+.whatsapp{
+  background:#25D366;
+  color:white;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+.contact a{
+  display:inline-block;
+  margin:10px;
+  padding:14px 26px;
+  border-radius:35px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* Footer */
 footer{
-background:#1b5e20;
-color:white;
-text-align:center;
-padding:15px;
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:22px;
+  font-size:14px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero h2{font-size:30px;}
+  .hero p{font-size:16px;}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>🌿 भुजबळ नर्सरी काष्टी 🌿</h1>
-<p>शासन मान्यता प्राप्त नर्सरी</p>
+  <h1>🌿 भुजबळ नर्सरी काष्टी</h1>
 </header>
 
+<!-- Floating leaves -->
+<div class="leaf">🍃</div>
+<div class="leaf">🌿</div>
+<div class="leaf">🍃</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-box">
+    <h2>महाराष्ट्रातील प्रीमियम फळ रोपवाटिका</h2>
+
+    <p><b>प्रो.प्रा. श्री. दत्तात्रय आनंदराव भुजबळ</b></p>
+    <p>B.Sc. Agriculture | DFBM | Tissue Culture</p>
+
+    <p><b>२५+ वर्षांचा अनुभव | शासन मान्यता प्राप्त प्रीमियम नर्सरी</b></p>
+
+    <br>
+
+    <a href="#plants" class="btn">🌱 झाडे पाहा</a>
+  </div>
+</div>
+
+<!-- Leadership -->
 <section>
-<h2>आमच्याबद्दल</h2>
-<p>
-भुजबळ नर्सरीमध्ये आंबा, नारळ, चिकू, पेरू, लिंबू, सिताफळ, संत्रा, जांभूळ, फणस, आणि इतर फळझाडांची
-उच्च दर्जाची कलमे उपलब्ध आहेत.
-</p>
+  <h2 class="title">नेतृत्व</h2>
 
-<h2>📞 संपर्क</h2>
-<p>
-मो.: <b>9822173040</b><br>
-मु.पो. काष्टी, ता. श्रीगोंदा,<br>
-जि. अहिल्यानगर, महाराष्ट्र
-</p>
+  <div class="cards">
 
-<a class="btn" href="tel:9822173040">📞 Call Now</a>
+    <div class="card">
+      <h3>👨‍🌾 संस्थापक / मालक</h3>
 
-<a class="btn" href="https://maps.app.goo.gl/t2zQSDW68iYjxbqg9">📍 Google Map</a>
+      <p><b>श्री. दत्तात्रय आनंदराव भुजबळ</b></p>
+
+      <p><b>B.Sc. Agriculture | DFBM | Tissue Culture</b></p>
+
+      <p>२५+ वर्षांचा नर्सरी व्यवसायाचा अनुभव.</p>
+
+      <p>उच्च दर्जाची कलमे, टिश्यू कल्चर आणि आधुनिक रोपवाटिका तंत्रज्ञानातील अनुभव.</p>
+    </div>
+
+    <div class="card">
+      <h3>👨‍💼 व्यवस्थापक</h3>
+
+      <p><b>प्रसाद दत्तात्रय भुजबळ</b></p>
+
+      <p><b>B.Sc. Agriculture</b></p>
+
+      <p><b>Business Operations & Customer Relations</b></p>
+
+      <p>ग्राहक संबंध, ऑनलाइन चौकशी, सेवा समन्वय आणि डिजिटल व्यवस्थापन.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- About -->
+<section>
+  <h2 class="title">आमच्याबद्दल</h2>
+
+  <div class="about">
+    भुजबळ नर्सरी काष्टी येथे आंबा, नारळ, चिकू, पेरू, लिंबू,
+    सीताफळ, संत्रा, जांभूळ, फणस आणि इतर फळझाडांची उच्च दर्जाची
+    कलमे उपलब्ध आहेत. अनुभवी मार्गदर्शनासह दर्जेदार रोपे पुरवणे
+    हे आमचे ध्येय आहे.
+  </div>
+</section>
+
+<!-- Plants -->
+<section id="plants">
+  <h2 class="title">उपलब्ध रोपे</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=600&auto=format&fit=crop">
+      <h3>🥭 आंबा</h3>
+      <p>केशर, अल्फोन्सो, लोणच्यासाठी आणि गावरान जाती उपलब्ध.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=600&auto=format&fit=crop">
+      <h3>🌴 नारळ</h3>
+      <p>मलेशियन ड्वार्फ आणि इतर उच्च उत्पादन देणाऱ्या जाती.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=600&auto=format&fit=crop">
+      <h3>🍋 लिंबू</h3>
+      <p>व्यावसायिक लागवडीसाठी योग्य दर्जेदार रोपे.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=600&auto=format&fit=crop">
+      <h3>🍐 पेरू</h3>
+      <p>सरदार आणि गुलाबी पेरूच्या निवडक जाती उपलब्ध.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div>
+    <h3>25+</h3>
+    <p>वर्षांचा अनुभव</p>
+  </div>
+
+  <div>
+    <h3>5000+</h3>
+    <p>समाधानी ग्राहक</p>
+  </div>
+
+  <div>
+    <h3>100+</h3>
+    <p>झाडांच्या जाती</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <h2 class="title">संपर्क करा</h2>
+
+  <p><b>भुजबळ नर्सरी काष्टी</b></p>
+  <p>काष्टी, ता. श्रीगोंदा, जि. अहिल्यानगर, महाराष्ट्र</p>
+
+  <p><b>मो.: 9822173040 / 9309434693</b></p>
+
+  <a href="tel:+919822173040" class="call btn">📞 Call Now</a>
+
+  <a href="https://wa.me/919822173040" class="whatsapp btn">💬 WhatsApp</a>
+
+  <a href="https://maps.app.goo.gl/t2zQSDW68iYjxbqg9" class="btn">📍 Google Map</a>
 </section>
 
 <footer>
-© 2026 Bhujbal Nursery Kashti
+  © 2026 भुजबळ नर्सरी काष्टी | शासन मान्यता प्राप्त प्रीमियम फळ रोपवाटिका
 </footer>
+
+<!-- Scroll animation -->
+<script>
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity="1";
+      entry.target.style.transform="translateY(0)";
+    }
+  });
+});
+
+sections.forEach(sec=>{
+  observer.observe(sec);
+});
+</script>
 
 </body>
 </html>
