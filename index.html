@@ -200,8 +200,9 @@ nav ul li a:hover{
 .nav-btn:hover{
     background:#09472f;
 }
-    /* ===========================
-   PREMIUM HERO SECTION
+    
+===========================
+PREMIUM HERO SECTION
 =========================== */
 
 .hero{
@@ -209,10 +210,83 @@ nav ul li a:hover{
     display:flex;
     align-items:center;
     background:
-        linear-gradient(rgba(10,35,25,.55),rgba(10,35,25,.65)),
-        url("images/hero.jpg") center/cover no-repeat;
-    color:#fff;
-    padding-top:90px;
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url("images/nursery-bg.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:40px 0;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero-tag{
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(8px);
+    font-size:15px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:60px;
+    line-height:1.1;
+    margin:15px 0;
+}
+
+.hero h1 span{
+    color:#7ed957;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+}
+
+.btn{
+    background:#7ed957;
+    color:white;
+    padding:14px 32px;
+    border-radius:30px;
+    text-decoration:none;
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+    padding:14px 32px;
+    border-radius:30px;
+    text-decoration:none;
+}
+
+.hero-stats{
+    display:flex;
+    gap:20px;
+    margin-top:45px;
+}
+
+.hero-stat{
+    background:rgba(255,255,255,0.15);
+    padding:15px 20px;
+    border-radius:15px;
+    backdrop-filter:blur(8px);
+}
+
+.hero-stat h3{
+    color:#7ed957;
+    margin:0;
+}
+    
 }
 
 .hero-content{
