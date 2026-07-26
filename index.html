@@ -845,7 +845,60 @@ grid-template-columns:1fr;
 }
 
 }
+/* OWNER SECTION */
 
+.owner{
+    background:#f8fbf7;
+    padding:90px 0;
+}
+
+.owner-box{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    background:#fff;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.owner-box img{
+    width:280px;
+    height:280px;
+    border-radius:20px;
+    object-fit:cover;
+    border:5px solid #0b5d3d;
+}
+
+.owner-info h3{
+    font-size:34px;
+    color:#0b5d3d;
+    margin-bottom:10px;
+}
+
+.owner-info h4{
+    color:#d4af37;
+    margin-bottom:20px;
+    font-size:20px;
+}
+
+.owner-info p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+@media(max-width:768px){
+    .owner-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .owner-box img{
+        width:220px;
+        height:220px;
+    }
+}
 /* END OF CSS */
 </style>
 </head>
@@ -1006,7 +1059,37 @@ We offer Mango, Coconut, Guava, Lemon, Amla, Jamun, Tamarind and many more fruit
 
 </div>
 
-</section>    
+</section>  
+      <section class="owner">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Meet Our Founder</h2>
+      <p>Serving farmers with trust and quality since 1960.</p>
+    </div>
+
+    <div class="owner-box">
+
+      <img src="images/owner.jpg" alt="Owner">
+
+      <div class="owner-info">
+        <h3>Mr. Dattatray Anandrao Bhujbal</h3>
+        <h4>Founder & Proprietor</h4>
+
+        <p>
+          Bhujbal Nursery is committed to providing healthy fruit plants,
+          expert guidance, and trusted service to farmers across Maharashtra.
+        </p>
+
+        <a href="#contact" class="btn">Contact Owner</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
      <section id="services" class="services">
 
 <div class="container">
