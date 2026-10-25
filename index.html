@@ -1300,6 +1300,45 @@ nav{
         display: block;
     }
 }
+      @media (max-width: 768px) {
+
+  .navbar {
+    position: relative;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 220px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    padding: 12px;
+  }
+}  
   </style>
 </head>
 
@@ -1319,7 +1358,7 @@ nav{
 </div>
 
 </a>
-
+<button class="menu-toggle">☰</button>
 <nav>
 
 <ul>
@@ -1789,6 +1828,18 @@ With decades of experience in nursery management, Bhujbal Nursery is committed t
     💬
 </a>
 <script src="script.js"></script>
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector("nav");
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", function () {
+      nav.classList.toggle("active");
+    });
+  }
+});
+</script>
 </body>
 </html>
 
