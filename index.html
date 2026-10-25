@@ -1340,7 +1340,18 @@ line-height: 1;
     display: block;
     padding: 12px;
   }
-}  
+}  @media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    color: #0b5d3d !important;
+    font-size: 28px;
+  }
+}
   </style>
 </head>
 
