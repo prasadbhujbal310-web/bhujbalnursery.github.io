@@ -1341,15 +1341,21 @@ line-height: 1;
     padding: 12px;
   }
 }  @media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
   .menu-toggle {
     display: block !important;
-    position: absolute;
-    right: 120px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
+    position: static !important;
+    margin: 0 8px !important;
+    font-size: 26px;
     color: #0b5d3d !important;
-    font-size: 28px;
   }
 }
   </style>
