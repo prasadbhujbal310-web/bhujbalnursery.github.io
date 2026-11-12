@@ -1461,15 +1461,29 @@ line-height: 1;
     white-space: nowrap !important;
   }
 
-  .menu-toggle {
-    display: block !important;
-    font-size: 27px !important;
-    padding: 5px !important;
-    margin: 0 !important;
+  header .container.navbar > .menu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 2 !important;
+    width: 42px !important;
+    height: 42px !important;
+    flex: 0 0 42px !important;
+    padding: 0 !important;
+    margin: 0 2px !important;
     background: transparent !important;
     border: none !important;
     color: #0b5d3d !important;
-  }
+    font-size: 27px !important;
+    line-height: 1 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+header .container.navbar > .nav-btn {
+    order: 3 !important;
+    flex-shrink: 0 !important;
+}
 
   .nav-btn {
     font-size: 12px !important;
