@@ -1478,6 +1478,27 @@ line-height: 1;
     white-space: nowrap !important;
   }
 }
+           .slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.slider-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5d1;
+  display: block;
+}
+
+.slider-dots .dot.active {
+  width: 22px;
+  border-radius: 10px;
+  background: #087f5b;
+}
 </style> 
 </head>
 
@@ -1779,7 +1800,10 @@ Welcome to <strong>Bhujbal Nursery, Kashti</strong>. We offer premium quality Ma
     </div>
 
 </div>
-          
+   <div class="slider-dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+</div>       
 </section>
   <section id="plants"><div class="gallery-grid">
 
